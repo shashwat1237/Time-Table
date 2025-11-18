@@ -1,0 +1,301 @@
+id,name,room_type,lecture_length
+1,Engineering Mathematics I,Normal lecture classrooms,1
+2,Engineering Physics (Theory),Normal lecture classrooms,1
+3,Basic Electrical Engineering (Theory),Normal lecture classrooms,1
+4,Physics Lab,Physics labs,2
+5,Engineering Mathematics II,Normal lecture classrooms,1
+6,Engineering Chemistry (Theory),Normal lecture classrooms,1
+7,Engineering Mechanics,Normal lecture classrooms,1
+8,Chemistry Lab,Chemistry labs,2
+9,Probability and Statistics,Normal lecture classrooms,1
+10,Environmental Studies,Normal lecture classrooms,1
+11,Management and Economics,Normal lecture classrooms,1
+12,Basic Electrical Lab,BEE Labs,2
+13,Engineering Ethics & Professional Practice,Normal lecture classrooms,1
+14,Project Management,Normal lecture classrooms,1
+15,Research Methodology,Normal lecture classrooms,1
+16,Advanced Computer Lab,Computer labs,2
+17,Programming Fundamentals (CSE Y1),Normal lecture classrooms,1
+18,Data Structures (CSE Y1),Normal lecture classrooms,1
+19,Programming Lab (CSE Y1),Computer labs,2
+20,Data Structures Lab (CSE Y1),Computer labs,2
+21,Data Structures (CSE Y2),Normal lecture classrooms,1
+22,Algorithms (CSE Y2),Normal lecture classrooms,1
+23,Data Structures Lab (CSE Y2),Computer labs,2
+24,Algorithms Lab (CSE Y2),Computer labs,2
+25,Algorithms (CSE Y3),Normal lecture classrooms,1
+26,Operating Systems (CSE Y3),Normal lecture classrooms,1
+27,Algorithms Lab (CSE Y3),Computer labs,2
+28,Networks Lab (CSE Y3),Computer labs,2
+29,Operating Systems (CSE Y4),Normal lecture classrooms,1
+30,Programming Fundamentals (CSE Y4),Normal lecture classrooms,1
+31,Networks Lab (CSE Y4),Computer labs,2
+32,Programming Lab (CSE Y4),Computer labs,2
+33,IT Fundamentals (IT Y1),Normal lecture classrooms,1
+34,Web Technologies (IT Y1),Normal lecture classrooms,1
+35,Web Technologies Lab (IT Y1),Computer labs,2
+36,Database Lab (IT Y1),Computer labs,2
+37,Web Technologies (IT Y2),Normal lecture classrooms,1
+38,Database Systems (IT Y2),Normal lecture classrooms,1
+39,Database Lab (IT Y2),Computer labs,2
+40,Mobile App Lab (IT Y2),Computer labs,2
+41,Database Systems (IT Y3),Normal lecture classrooms,1
+42,Information Security (IT Y3),Normal lecture classrooms,1
+43,Mobile App Lab (IT Y3),Computer labs,2
+44,Information Security Lab (IT Y3),Computer labs,2
+45,Information Security (IT Y4),Normal lecture classrooms,1
+46,IT Fundamentals (IT Y4),Normal lecture classrooms,1
+47,Information Security Lab (IT Y4),Computer labs,2
+48,Web Technologies Lab (IT Y4),Computer labs,2
+49,Circuit Theory (ECE Y1),Normal lecture classrooms,1
+50,Electronic Devices (ECE Y1),Normal lecture classrooms,1
+51,Electronics Lab (ECE Y1),BEE Labs,2
+52,Signal Processing Lab (ECE Y1),BEE Labs,2
+53,Electronic Devices (ECE Y2),Normal lecture classrooms,1
+54,Signal Processing (ECE Y2),Normal lecture classrooms,1
+55,Signal Processing Lab (ECE Y2),BEE Labs,2
+56,Communication Lab (ECE Y2),BEE Labs,2
+57,Signal Processing (ECE Y3),Normal lecture classrooms,1
+58,Communication Systems (ECE Y3),Normal lecture classrooms,1
+59,Communication Lab (ECE Y3),BEE Labs,2
+60,VLSI Lab (ECE Y3),BEE Labs,2
+61,Communication Systems (ECE Y4),Normal lecture classrooms,1
+62,Circuit Theory (ECE Y4),Normal lecture classrooms,1
+63,VLSI Lab (ECE Y4),BEE Labs,2
+64,Electronics Lab (ECE Y4),BEE Labs,2
+65,Circuit Analysis (EE Y1),Normal lecture classrooms,1
+66,Electrical Machines (EE Y1),Normal lecture classrooms,1
+67,Machines Lab (EE Y1),BEE Labs,2
+68,Power Systems Lab (EE Y1),BEE Labs,2
+69,Electrical Machines (EE Y2),Normal lecture classrooms,1
+70,Power Systems (EE Y2),Normal lecture classrooms,1
+71,Power Systems Lab (EE Y2),BEE Labs,2
+72,Control Systems Lab (EE Y2),BEE Labs,2
+73,Power Systems (EE Y3),Normal lecture classrooms,1
+74,Control Systems (EE Y3),Normal lecture classrooms,1
+75,Control Systems Lab (EE Y3),BEE Labs,2
+76,Drives Lab (EE Y3),BEE Labs,2
+77,Control Systems (EE Y4),Normal lecture classrooms,1
+78,Circuit Analysis (EE Y4),Normal lecture classrooms,1
+79,Drives Lab (EE Y4),BEE Labs,2
+80,Machines Lab (EE Y4),BEE Labs,2
+81,Open Elective 1 (normal),Normal lecture classrooms,1
+82,Open Elective 2 (physics),Physics labs,2
+83,Open Elective 3 (chem),Chemistry labs,2
+84,Open Elective 4 (bee),BEE Labs,2
+85,Open Elective 5 (comp),Computer labs,2
+86,Open Elective 6 (normal),Normal lecture classrooms,1
+87,Open Elective 7 (physics),Physics labs,2
+88,Open Elective 8 (chem),Chemistry labs,2
+89,Open Elective 9 (bee),BEE Labs,2
+90,Open Elective 10 (comp),Computer labs,2
+91,Open Elective 11 (normal),Normal lecture classrooms,1
+92,Open Elective 12 (physics),Physics labs,2
+93,Open Elective 13 (chem),Chemistry labs,2
+94,Open Elective 14 (bee),BEE Labs,2
+95,Open Elective 15 (comp),Computer labs,2
+96,Open Elective 16 (normal),Normal lecture classrooms,1
+97,Open Elective 17 (physics),Physics labs,2
+98,Open Elective 18 (chem),Chemistry labs,2
+99,Open Elective 19 (bee),BEE Labs,2
+100,Open Elective 20 (comp),Computer labs,2
+101,Open Elective 21 (normal),Normal lecture classrooms,1
+102,Open Elective 22 (physics),Physics labs,2
+103,Open Elective 23 (chem),Chemistry labs,2
+104,Open Elective 24 (bee),BEE Labs,2
+105,Open Elective 25 (comp),Computer labs,2
+106,Open Elective 26 (normal),Normal lecture classrooms,1
+107,Open Elective 27 (physics),Physics labs,2
+108,Open Elective 28 (chem),Chemistry labs,2
+109,Open Elective 29 (bee),BEE Labs,2
+110,Open Elective 30 (comp),Computer labs,2
+111,Open Elective 31 (normal),Normal lecture classrooms,1
+112,Open Elective 32 (physics),Physics labs,2
+113,Open Elective 33 (chem),Chemistry labs,2
+114,Open Elective 34 (bee),BEE Labs,2
+115,Open Elective 35 (comp),Computer labs,2
+116,Open Elective 36 (normal),Normal lecture classrooms,1
+117,Open Elective 37 (physics),Physics labs,2
+118,Open Elective 38 (chem),Chemistry labs,2
+119,Open Elective 39 (bee),BEE Labs,2
+120,Open Elective 40 (comp),Computer labs,2
+121,Open Elective 41 (normal),Normal lecture classrooms,1
+122,Open Elective 42 (physics),Physics labs,2
+123,Open Elective 43 (chem),Chemistry labs,2
+124,Open Elective 44 (bee),BEE Labs,2
+125,Open Elective 45 (comp),Computer labs,2
+126,Open Elective 46 (normal),Normal lecture classrooms,1
+127,Open Elective 47 (physics),Physics labs,2
+128,Open Elective 48 (chem),Chemistry labs,2
+129,Open Elective 49 (bee),BEE Labs,2
+130,Open Elective 50 (comp),Computer labs,2
+131,Open Elective 51 (normal),Normal lecture classrooms,1
+132,Open Elective 52 (physics),Physics labs,2
+133,Open Elective 53 (chem),Chemistry labs,2
+134,Open Elective 54 (bee),BEE Labs,2
+135,Open Elective 55 (comp),Computer labs,2
+136,Open Elective 56 (normal),Normal lecture classrooms,1
+137,Open Elective 57 (physics),Physics labs,2
+138,Open Elective 58 (chem),Chemistry labs,2
+139,Open Elective 59 (bee),BEE Labs,2
+140,Open Elective 60 (comp),Computer labs,2
+141,Open Elective 61 (normal),Normal lecture classrooms,1
+142,Open Elective 62 (physics),Physics labs,2
+143,Open Elective 63 (chem),Chemistry labs,2
+144,Open Elective 64 (bee),BEE Labs,2
+145,Open Elective 65 (comp),Computer labs,2
+146,Open Elective 66 (normal),Normal lecture classrooms,1
+147,Open Elective 67 (physics),Physics labs,2
+148,Open Elective 68 (chem),Chemistry labs,2
+149,Open Elective 69 (bee),BEE Labs,2
+150,Open Elective 70 (comp),Computer labs,2
+151,Open Elective 71 (normal),Normal lecture classrooms,1
+152,Open Elective 72 (physics),Physics labs,2
+153,Open Elective 73 (chem),Chemistry labs,2
+154,Open Elective 74 (bee),BEE Labs,2
+155,Open Elective 75 (comp),Computer labs,2
+156,Open Elective 76 (normal),Normal lecture classrooms,1
+157,Open Elective 77 (physics),Physics labs,2
+158,Open Elective 78 (chem),Chemistry labs,2
+159,Open Elective 79 (bee),BEE Labs,2
+160,Open Elective 80 (comp),Computer labs,2
+161,Open Elective 81 (normal),Normal lecture classrooms,1
+162,Open Elective 82 (physics),Physics labs,2
+163,Open Elective 83 (chem),Chemistry labs,2
+164,Open Elective 84 (bee),BEE Labs,2
+165,Open Elective 85 (comp),Computer labs,2
+166,Open Elective 86 (normal),Normal lecture classrooms,1
+167,Open Elective 87 (physics),Physics labs,2
+168,Open Elective 88 (chem),Chemistry labs,2
+169,Open Elective 89 (bee),BEE Labs,2
+170,Open Elective 90 (comp),Computer labs,2
+171,Open Elective 91 (normal),Normal lecture classrooms,1
+172,Open Elective 92 (physics),Physics labs,2
+173,Open Elective 93 (chem),Chemistry labs,2
+174,Open Elective 94 (bee),BEE Labs,2
+175,Open Elective 95 (comp),Computer labs,2
+176,Open Elective 96 (normal),Normal lecture classrooms,1
+177,Open Elective 97 (physics),Physics labs,2
+178,Open Elective 98 (chem),Chemistry labs,2
+179,Open Elective 99 (bee),BEE Labs,2
+180,Open Elective 100 (comp),Computer labs,2
+181,Open Elective 101 (normal),Normal lecture classrooms,1
+182,Open Elective 102 (physics),Physics labs,2
+183,Open Elective 103 (chem),Chemistry labs,2
+184,Open Elective 104 (bee),BEE Labs,2
+185,Open Elective 105 (comp),Computer labs,2
+186,Open Elective 106 (normal),Normal lecture classrooms,1
+187,Open Elective 107 (physics),Physics labs,2
+188,Open Elective 108 (chem),Chemistry labs,2
+189,Open Elective 109 (bee),BEE Labs,2
+190,Open Elective 110 (comp),Computer labs,2
+191,Open Elective 111 (normal),Normal lecture classrooms,1
+192,Open Elective 112 (physics),Physics labs,2
+193,Open Elective 113 (chem),Chemistry labs,2
+194,Open Elective 114 (bee),BEE Labs,2
+195,Open Elective 115 (comp),Computer labs,2
+196,Open Elective 116 (normal),Normal lecture classrooms,1
+197,Open Elective 117 (physics),Physics labs,2
+198,Open Elective 118 (chem),Chemistry labs,2
+199,Open Elective 119 (bee),BEE Labs,2
+200,Open Elective 120 (comp),Computer labs,2
+201,Open Elective 121 (normal),Normal lecture classrooms,1
+202,Open Elective 122 (physics),Physics labs,2
+203,Open Elective 123 (chem),Chemistry labs,2
+204,Open Elective 124 (bee),BEE Labs,2
+205,Open Elective 125 (comp),Computer labs,2
+206,Open Elective 126 (normal),Normal lecture classrooms,1
+207,Open Elective 127 (physics),Physics labs,2
+208,Open Elective 128 (chem),Chemistry labs,2
+209,Open Elective 129 (bee),BEE Labs,2
+210,Open Elective 130 (comp),Computer labs,2
+211,Open Elective 131 (normal),Normal lecture classrooms,1
+212,Open Elective 132 (physics),Physics labs,2
+213,Open Elective 133 (chem),Chemistry labs,2
+214,Open Elective 134 (bee),BEE Labs,2
+215,Open Elective 135 (comp),Computer labs,2
+216,Open Elective 136 (normal),Normal lecture classrooms,1
+217,Open Elective 137 (physics),Physics labs,2
+218,Open Elective 138 (chem),Chemistry labs,2
+219,Open Elective 139 (bee),BEE Labs,2
+220,Open Elective 140 (comp),Computer labs,2
+221,Open Elective 141 (normal),Normal lecture classrooms,1
+222,Open Elective 142 (physics),Physics labs,2
+223,Open Elective 143 (chem),Chemistry labs,2
+224,Open Elective 144 (bee),BEE Labs,2
+225,Open Elective 145 (comp),Computer labs,2
+226,Open Elective 146 (normal),Normal lecture classrooms,1
+227,Open Elective 147 (physics),Physics labs,2
+228,Open Elective 148 (chem),Chemistry labs,2
+229,Open Elective 149 (bee),BEE Labs,2
+230,Open Elective 150 (comp),Computer labs,2
+231,Open Elective 151 (normal),Normal lecture classrooms,1
+232,Open Elective 152 (physics),Physics labs,2
+233,Open Elective 153 (chem),Chemistry labs,2
+234,Open Elective 154 (bee),BEE Labs,2
+235,Open Elective 155 (comp),Computer labs,2
+236,Open Elective 156 (normal),Normal lecture classrooms,1
+237,Open Elective 157 (physics),Physics labs,2
+238,Open Elective 158 (chem),Chemistry labs,2
+239,Open Elective 159 (bee),BEE Labs,2
+240,Open Elective 160 (comp),Computer labs,2
+241,Open Elective 161 (normal),Normal lecture classrooms,1
+242,Open Elective 162 (physics),Physics labs,2
+243,Open Elective 163 (chem),Chemistry labs,2
+244,Open Elective 164 (bee),BEE Labs,2
+245,Open Elective 165 (comp),Computer labs,2
+246,Open Elective 166 (normal),Normal lecture classrooms,1
+247,Open Elective 167 (physics),Physics labs,2
+248,Open Elective 168 (chem),Chemistry labs,2
+249,Open Elective 169 (bee),BEE Labs,2
+250,Open Elective 170 (comp),Computer labs,2
+251,Open Elective 171 (normal),Normal lecture classrooms,1
+252,Open Elective 172 (physics),Physics labs,2
+253,Open Elective 173 (chem),Chemistry labs,2
+254,Open Elective 174 (bee),BEE Labs,2
+255,Open Elective 175 (comp),Computer labs,2
+256,Open Elective 176 (normal),Normal lecture classrooms,1
+257,Open Elective 177 (physics),Physics labs,2
+258,Open Elective 178 (chem),Chemistry labs,2
+259,Open Elective 179 (bee),BEE Labs,2
+260,Open Elective 180 (comp),Computer labs,2
+261,Open Elective 181 (normal),Normal lecture classrooms,1
+262,Open Elective 182 (physics),Physics labs,2
+263,Open Elective 183 (chem),Chemistry labs,2
+264,Open Elective 184 (bee),BEE Labs,2
+265,Open Elective 185 (comp),Computer labs,2
+266,Open Elective 186 (normal),Normal lecture classrooms,1
+267,Open Elective 187 (physics),Physics labs,2
+268,Open Elective 188 (chem),Chemistry labs,2
+269,Open Elective 189 (bee),BEE Labs,2
+270,Open Elective 190 (comp),Computer labs,2
+271,Open Elective 191 (normal),Normal lecture classrooms,1
+272,Open Elective 192 (physics),Physics labs,2
+273,Open Elective 193 (chem),Chemistry labs,2
+274,Open Elective 194 (bee),BEE Labs,2
+275,Open Elective 195 (comp),Computer labs,2
+276,Open Elective 196 (normal),Normal lecture classrooms,1
+277,Open Elective 197 (physics),Physics labs,2
+278,Open Elective 198 (chem),Chemistry labs,2
+279,Open Elective 199 (bee),BEE Labs,2
+280,Open Elective 200 (comp),Computer labs,2
+281,Open Elective 201 (normal),Normal lecture classrooms,1
+282,Open Elective 202 (physics),Physics labs,2
+283,Open Elective 203 (chem),Chemistry labs,2
+284,Open Elective 204 (bee),BEE Labs,2
+285,Open Elective 205 (comp),Computer labs,2
+286,Open Elective 206 (normal),Normal lecture classrooms,1
+287,Open Elective 207 (physics),Physics labs,2
+288,Open Elective 208 (chem),Chemistry labs,2
+289,Open Elective 209 (bee),BEE Labs,2
+290,Open Elective 210 (comp),Computer labs,2
+291,Open Elective 211 (normal),Normal lecture classrooms,1
+292,Open Elective 212 (physics),Physics labs,2
+293,Open Elective 213 (chem),Chemistry labs,2
+294,Open Elective 214 (bee),BEE Labs,2
+295,Open Elective 215 (comp),Computer labs,2
+296,Open Elective 216 (normal),Normal lecture classrooms,1
+297,Open Elective 217 (physics),Physics labs,2
+298,Open Elective 218 (chem),Chemistry labs,2
+299,Open Elective 219 (bee),BEE Labs,2
+300,Open Elective 220 (comp),Computer labs,2

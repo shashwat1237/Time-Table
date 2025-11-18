@@ -20,29 +20,24 @@ rooms["timetable"]=rooms["timetable"].apply(ast.literal_eval)
 #room_id,room_type,timetable
 
 def or_op(a1,a2):
-    a3=[[i+j-(i*j) for i,j in zip(row1,row2)] for row1,row2 in zip(a1,a2)]
+    a3=[[i or j for i,j in zip(row1,row2)] for row1,row2 in zip(a1,a2)]
     return a3
 def and_op(arrays):
-    a3=[[0 for _ in range(7)] for _ in range(6)]
+    a3=[[1 for _ in range(7)] for _ in range(6)]
     for array in arrays:
         a3=[[i and j for i,j in zip(row1,row2)] for row1,row2 in zip(array,a3)]
 
     return a3
-def matrix_sum(matrix):
-    return sum([sum(row) for row in matrix])
+#def matrix_sum(matrix):
+#    return sum([sum(row) for row in matrix])
 def modify_for_2hr(cr):
-    m=[[0 for _ in range(7)] for _ in range(6)]
+    m=[[1 for _ in range(7)] for _ in range(6)]
     i=0
     while i<len(cr):
         j=0
-        while j<len(cr[0]):
-            if cr[i][j]==1:
-                m[i][j]=1
-            try:
-                if cr[i][j+1]==1:
-                    m[i][j]=1
-            except:
-                m[i][j]=1
+        while j<len(cr[0])-1:
+            if cr[i][j]==0 and cr[i][j+1]==0:
+                m[i][j]=0
             j+=1
 
         i+=1
@@ -71,22 +66,30 @@ def calculate_restrictions_for_subject(subjectid,subject_row,classid,class_row):
     if subject_row["lecture_length"]==2:
         m2=modify_for_2hr(m2)
     return m2
-def find_available(room_type,length,i,j):
+def find_available(room_type,length,super_i,super_j):
     room_timetables=rooms["timetable"].values.tolist()
+    room_types=rooms["room_type"].values.tolist()
+    index=0
     
-    for index,room_timetable in enumerate(room_timetables):
-        i=0
-        while i<6:
-            j=0
-            while j<7:
-                if (length==1) and room_timetable[i][j]==0:
-                        
-                    return index
-                elif j<6:
-                    if (length==2) and room_timetable[i][j]==0 and room_timetable[i][j+1]==0:
-                        return index
-                j+=1
-            i+=1
+    for room_timetable,room_type_i in zip(room_timetables,room_types):
+        if room_type_i!=room_type:
+            index+=1
+            continue
+
+        if room_timetable[super_i][super_j]!=0:
+            index+=1
+            continue
+
+        if length==2:
+            if room_timetable[super_i][super_j+1]!=0:
+                index+=1
+                continue
+
+        return index
+
+        
+
+    return -1
 
 
 def assign_subject(subject_row,class_row,class_index,total_restriction):
@@ -103,6 +106,10 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
     #print(teacher_row.index)
     teacherTimeTable=teacher_row["timetable"]
     classTimeTable=class_row["timetable"]
+
+    room_text=class_row["name"]+"  ,  "+subject_row["name"]
+    class_text=subject_row["name"]+"  ,  "
+    teacher_text=class_row["name"]+"  ,  "+subject_row["name"]+"  ,  "
     
     
 
@@ -112,35 +119,46 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
     while i<6:
         j=0
         while j<7:
+            print(j)
             if lecture_length==1:
                 if total_restriction[i][j]==0:
-                    total_restriction[i][j]=1
-                    classTimeTable[i][j]=1
-                    teacherTimeTable[i][j]=1
+                    
 
                     
 
                     
                     room_index=find_available(room_type,1,i,j)
+                    if room_index==-1:
+                        j+=1
+                        continue
+                    room_id=str(rooms.loc[room_index,"room_id"])
+                    classTimeTable[i][j]=class_text+room_id
+                    teacherTimeTable[i][j]=teacher_text+room_id
+                    
                     roomTimeTable=rooms.loc[room_index,"timetable"]
-                    roomTimeTable[i][j]=1
+                    roomTimeTable[i][j]=room_text
                     rooms.at[room_index,"timetable"]=roomTimeTable
                     break
-            elif j<6:
-                if total_restriction[i][j]==0 and total_restriction[i][j+1]==0:
-                    total_restriction[i][j]=1
-                    total_restriction[i][j+1]=1
-                    classTimeTable[i][j]=1
-                    classTimeTable[i][j+1]=1
-                    teacherTimeTable[i][j]=1
-                    teacherTimeTable[i][j+1]=1
+            
+            elif total_restriction[i][j]==0:
 
-                    room_index=find_available(room_type,2,i,j)
-                    roomTimeTable=rooms.loc[room_index,"timetable"]
-                    roomTimeTable[i][j]=1
-                    roomTimeTable[i][j+1]=1
-                    rooms.at[room_index,"timetable"]=roomTimeTable
-                    break
+
+                room_index=find_available(room_type,2,i,j)
+                if room_index==-1:
+                    j+=1
+                    continue
+                room_id=str(rooms.loc[room_index,"room_id"])
+
+                classTimeTable[i][j]=class_text+room_id
+                classTimeTable[i][j+1]=class_text+room_id
+                teacherTimeTable[i][j]=teacher_text+room_id
+                teacherTimeTable[i][j+1]=teacher_text+room_id
+                
+                roomTimeTable=rooms.loc[room_index,"timetable"]
+                roomTimeTable[i][j]=room_text
+                roomTimeTable[i][j+1]=room_text
+                rooms.at[room_index,"timetable"]=roomTimeTable
+                break
             j+=1
         i+=1
 
@@ -152,7 +170,6 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
     sl[subjectid]=sl[subjectid]-1
     classes.at[class_index,"sl"]=sl
     #print(1)
-    return total_restriction
 
 def assign_to_class(class_row,class_index):
     st=class_row["st"]
@@ -202,10 +219,15 @@ def decide_timetable_for_each_class():
         #print(classes.iloc[index]["sl"])
         assign_to_class(classes.iloc[index],index)
         index+=1     
-    
 
+def reset_timetable():
+    global classes,rooms,teachers
+    classes["timetable"]=[[[0 for _ in range(7)] for _ in range(6)] for _ in range(len(classes))]
+    rooms["timetable"]=[[[0 for _ in range(7)] for _ in range(6)] for _ in range(len(rooms))]
+    teachers["timetable"]=[[[0 for _ in range(7)] for _ in range(6)] for _ in range(len(teachers))]
 decide_timetable_for_each_class()
-teachers.to_csv("teachers.csv")
-rooms.to_csv("rooms.csv")
-classes.to_csv("classes.csv")
+#reset_timetable()
+teachers.to_csv("teachers.csv",index=False)
+rooms.to_csv("rooms.csv",index=False)
+classes.to_csv("classes.csv",index=False)
 
