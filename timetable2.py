@@ -116,10 +116,12 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
 
 
     i=0
+    condition=False
     while i<6:
         j=0
         while j<7:
-            print(j)
+        
+            #print(j,"j")
             if lecture_length==1:
                 if total_restriction[i][j]==0:
                     
@@ -130,6 +132,7 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
                     room_index=find_available(room_type,1,i,j)
                     if room_index==-1:
                         j+=1
+                        
                         continue
                     room_id=str(rooms.loc[room_index,"room_id"])
                     classTimeTable[i][j]=class_text+room_id
@@ -138,6 +141,7 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
                     roomTimeTable=rooms.loc[room_index,"timetable"]
                     roomTimeTable[i][j]=room_text
                     rooms.at[room_index,"timetable"]=roomTimeTable
+                    condition=True
                     break
             
             elif total_restriction[i][j]==0:
@@ -158,9 +162,14 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
                 roomTimeTable[i][j]=room_text
                 roomTimeTable[i][j+1]=room_text
                 rooms.at[room_index,"timetable"]=roomTimeTable
+                condition=True
                 break
             j+=1
+        if condition:
+            break
         i+=1
+    if not(condition):
+        return -1
 
     classes.at[class_index,"timetable"]=classTimeTable
     #print(teacher_index)
@@ -170,43 +179,51 @@ def assign_subject(subject_row,class_row,class_index,total_restriction):
     sl[subjectid]=sl[subjectid]-1
     classes.at[class_index,"sl"]=sl
     #print(1)
+    
 
 def assign_to_class(class_row,class_index):
     st=class_row["st"]
     sl=class_row["sl"]
 
     subjects_list=list(st.keys())
+    subject_df=pd.DataFrame({"subjects":subjects_list})
+    subject_df["lecture_length"]=subject_df["subjects"].apply(lambda x:subjects[subjects["id"]==x]["lecture_length"].iloc[0])
+    subject_df.set_index("subjects",drop=True,inplace=True)
+    subject_df2=pd.Series(sl.values(),
+                          index=sl.keys())
+    subject_df["lectures_per_week"]=subject_df2
 
-    subjects_2hr=[]
-    subjects_1hr=[]
-
-    lecture_length_df=pd.Series(subjects["lecture_length"],
-                                index=subjects["id"])
-
-
-    i=0
-    while i<len(subjects_list)-1:
-        j=0
-        while j<len(subjects_list)-i-1:
-            if lecture_length_df[subjects_list[j]]<lecture_length_df[subjects_list[j+1]]:
-                
-                subjects_list[j],subjects_list[j+1]=subjects_list[j+1],subjects_list[j]
-
-            elif sl[subjects_list[j]]<sl[subjects_list[j+1]]:
-                subjects_list[j],subjects_list[j+1]=subjects_list[j+1],subjects_list[j]
-            j+=1
-        i+=1
-
-
-
-    for subjectid in subjects_list:
+    subjects_1hr=subject_df[subject_df["lecture_length"]==1]
+    subjects_2hr=subject_df[subject_df["lecture_length"]==2]
+    #print(subjects_2hr["lectures_per_week"].sum())
+    while subjects_2hr["lectures_per_week"].sum()>0:
+        subjectid=subjects_2hr["lectures_per_week"].idxmax()
         subject_row=subjects[subjects["id"]==subjectid].iloc[0]
-        #print(class_row["sl"],"hi")
-        assign_subject(subject_row,
+        result=assign_subject(subject_row,
                        class_row,class_index,
                        calculate_restrictions_for_subject(subjectid,subject_row,class_index,class_row))
-        
+        #print(result)
 
+        if result==-1:
+            subjects_2hr.loc[subjectid,"lectures_per_week"]=0
+        else:
+            subjects_2hr.loc[subjectid,"lectures_per_week"]-=1
+    #print(subjects_1hr["lectures_per_week"].sum())
+    while subjects_1hr["lectures_per_week"].sum()>0:
+        subjectid=subjects_1hr["lectures_per_week"].idxmax()
+        subject_row=subjects[subjects["id"]==subjectid].iloc[0]
+        result=assign_subject(subject_row,
+                       class_row,class_index,
+                       calculate_restrictions_for_subject(subjectid,subject_row,class_index,class_row))
+        #print(result)
+
+        if result==-1:
+            subjects_1hr.loc[subjectid,"lectures_per_week"]=0
+        else:
+            subjects_1hr.loc[subjectid,"lectures_per_week"]-=1
+
+
+    
 def decide_timetable_for_each_class():
     global classes
     index=0
@@ -217,8 +234,11 @@ def decide_timetable_for_each_class():
 
     while index<l:
         #print(classes.iloc[index]["sl"])
+        #print(1)
         assign_to_class(classes.iloc[index],index)
-        index+=1     
+        index+=1
+
+    
 
 def reset_timetable():
     global classes,rooms,teachers
