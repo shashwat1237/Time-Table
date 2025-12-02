@@ -38,6 +38,7 @@ Time-Table-main/
 ├── rooms.csv                  # Room timetables + room types
 ├── subjects.csv               # Subjects + required room type + 1hr/2hr length
 │
+|
 └── README.md                 
 
 **How It Works**
